@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+  {% block title %} Test {% endblock %}
+  {% block content %}
+    <h1> ML Model - Test </h1>
+    <form method="POST" action"={{url_for('test')}}">
+    {{ form.csrf_token }}
+        {{ form.Ambient_Temperature.label }} {{ form.Ambient_Temperature }}<br>
+        {{ form.Calibration.label }} {{ form.Calibration }}<br>
+        {{ form.Unwanted_substance_deposition.label }} {{ form.Unwanted_substance_deposition }}<br>
+        {{ form.Humidity.label }} {{ form.Humidity }}<br>
+        {{ form.H2S_Content.label }} {{ form.H2S_Content }}<br>
+        {{ form.detected_by.label }} {{ form.detected_by }}<br>
+        <input type="submit" value="Predict">
+    </form>
+  {% endblock %}
